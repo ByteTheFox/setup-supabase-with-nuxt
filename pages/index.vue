@@ -1,11 +1,11 @@
 <template>
-  <div class="text-center flex flex-col space-y-12">
+  <div class="text-center flex flex-col space-y-12" v-if="user">
     <h1 class="text-5xl text-white">Welcome!</h1>
 
-    <nuxt-link to="/auth/login">
-      <u-button size="xl">Login</u-button>
-    </nuxt-link>
+    <p>Your email address is: {{ user.email }}</p>
   </div>
 </template>
+
 <script setup lang="ts">
+const user = useSupabaseUser();
 </script>
